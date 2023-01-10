@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "110120",
+    "database": "doc360",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5439
+  },
+  "test": {
+    "username": "postgres",
+    "password": "110120",
+    "database": "doc360",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5439
+  },
+  "production": {
+    "username": "postgres",
+    "password": "110120",
+    "database": "doc360",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5439
+  }
+}

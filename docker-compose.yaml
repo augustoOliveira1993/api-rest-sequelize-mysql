@@ -1,0 +1,30 @@
+version: "3"
+networks:
+    backend:
+        external: true
+
+services:
+    db:
+        image: postgres
+        container_name: doc360-pgsql
+        volumes: 
+            -   ./../db:/var/lib/postgresql/data
+        ports: 
+            -   "5439:5432"
+        environment: 
+            POSTGRES_PASSWORD: 110120
+            POSTGRES_DB: doc360
+        restart: always
+        networks: 
+            -   backend
+        tty: true  
+    app:
+        image: doc360:node
+        container_name: doc360-node
+        volumes: 
+            -   ./:/var/www
+        ports: 
+            -   "8000:8000"
+        networks: 
+            -   backend
+        tty: true

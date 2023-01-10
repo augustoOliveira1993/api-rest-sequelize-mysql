@@ -1,0 +1,15 @@
+FROM node:16
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install && npm i -g npm@8.17.0
+
+COPY . .
+
+COPY .docker/entrypoint.dev.sh /
+
+EXPOSE 8000
+
+ENTRYPOINT [ "/entrypoint.dev.sh" ]
